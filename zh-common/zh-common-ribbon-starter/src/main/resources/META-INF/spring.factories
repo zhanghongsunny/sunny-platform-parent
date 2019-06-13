@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.common.ribbon.RibbonAutoConfigure,\
+com.common.ribbon.FeignAutoConfigure,\
+com.common.ribbon.RestTemplateAutoConfigure

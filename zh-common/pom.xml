@@ -14,10 +14,22 @@
     <packaging>pom</packaging>
 
     <modules>
-        <!-- 日志 -->
+        <!-- 日志管理 -->
         <module>zh-common-log-starter</module>
-        <!-- 数据源 -->
+        <!-- 数据库管理 -->
         <module>zh-common-db-starter</module>
+        <!-- redis管理 -->
+        <module>zh-common-redis-starter</module>
+        <!-- 公共工具管理 -->
+        <module>zh-common-starter</module>
+        <!-- 远程通信管理 -->
+        <module>zh-common-ribbon-starter</module>
+        <!-- 服务降级、熔断和限流管理 -->
+        <module>zh-common-sentinel-starter</module>
+        <!-- 认证客户端管理 -->
+        <module>zh-common-auth-client-starter</module>
+        <!-- api文档 -->
+        <module>zh-common-swagger2-starter</module>
     </modules>
 
 </project>

@@ -1,0 +1,25 @@
+server:
+  port: 8000
+
+zh:
+  nacos:
+    server-addr: 127.0.0.1:8848
+
+spring:
+  application:
+    name: security-oauth-service
+  cloud:
+    nacos:
+      config:
+        server-addr: ${zh.nacos.server-addr}
+        file-extension: yml
+        shared-dataids: common.yml
+        refreshable-dataids: common.yml
+      discovery:
+        server-addr: ${zh.nacos.server-addr}
+
+encrypt:
+  key-store:
+    location: classpath:zh.jks
+    secret: zhanghong98
+    alias: zh

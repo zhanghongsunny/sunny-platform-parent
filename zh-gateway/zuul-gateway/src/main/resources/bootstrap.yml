@@ -1,0 +1,22 @@
+server:
+  port: 9900
+  undertow:
+    buffer-size: 1024
+    direct-buffers: true
+
+zh:
+  nacos:
+    server-addr: 127.0.0.1:8848
+
+spring:
+  application:
+    name: zuul-gateway
+  cloud:
+    nacos:
+      config:
+        server-addr: ${zh.nacos.server-addr}
+        file-extension: yml
+        shared-dataids: common.yml
+        refreshable-dataids: common.yml
+      discovery:
+        server-addr: ${zh.nacos.server-addr}

@@ -1,0 +1,47 @@
+spring:
+  datasource:
+    url: jdbc:mysql://${zh.datasource.ip}:3306/sunny?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull
+    username: ${zh.datasource.username}
+    password: ${zh.datasource.password}
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.security.oauth.model
+  global-config:
+    db-config:
+      id-type: auto
+
+zh:
+  oauth2:
+    token:
+      store:
+        type: authJwt
+  swagger:
+    enabled: true
+    title: 认证中心
+    description: 认证中心接口文档
+    version: 1.0
+    base-package: com.security.oauth.controller
+  security:
+    ignore:
+      # 忽略认证的地址
+      httpUrls: >
+        /validata/**,
+        /clients,
+        /clients/**,
+        /doc.html,
+        /v2/api-docs,
+        /api-docs-ext,
+        /api-docs,
+        /swagger-ui.html,
+        /swagger-resources/configuration/ui,
+        /swagger-resources/configuration/security,
+        /login.html,
+        /css/**,
+        /images/**,
+        /js/**
+    code:
+      # 忽略验证码的应用编号
+      ignoreClientCode: app
