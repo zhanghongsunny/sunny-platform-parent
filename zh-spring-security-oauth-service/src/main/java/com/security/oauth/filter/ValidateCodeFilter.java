@@ -1,6 +1,7 @@
 package com.security.oauth.filter;
 
 import com.common.constant.SecurityConstants;
+import com.common.feign.UserService;
 import com.common.oauth2.properties.SecurityProperties;
 import com.common.oauth2.util.AuthUtils;
 import com.security.oauth.exception.ValidateCodeException;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.web.filter.OncePerRequestFilter;
 
+import javax.annotation.Resource;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -30,7 +32,6 @@ import java.io.IOException;
 @Slf4j
 @Component("validateCodeFilter")
 public class ValidateCodeFilter extends OncePerRequestFilter {
-
     @Autowired
     private IValidateCodeService validateCodeService;
 
@@ -84,5 +85,4 @@ public class ValidateCodeFilter extends OncePerRequestFilter {
         }
         chain.doFilter(request, response);
     }
-
 }

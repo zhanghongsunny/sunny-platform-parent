@@ -28,13 +28,12 @@ import java.util.Arrays;
  * @author: zhanghong
  * @版本: 1.0
  * @创建日期: 2019-06-13
- * @创建时间: 14:31
+ * @创建时间: 22:31
  **/
 @Configuration
 @EnableAuthorizationServer
 @AutoConfigureAfter(AuthorizationServerEndpointsConfigurer.class)
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
-
     /**
      * 注入authenticationManager 来支持 password grant type
      */

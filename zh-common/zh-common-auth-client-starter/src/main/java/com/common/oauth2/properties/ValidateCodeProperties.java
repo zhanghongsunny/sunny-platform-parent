@@ -1,6 +1,8 @@
 package com.common.oauth2.properties;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @描述: 验证码配置
@@ -11,7 +13,8 @@ import lombok.Data;
  * @创建日期: 2019-06-13
  * @创建时间: 10:00
  **/
-@Data
+@Setter
+@Getter
 public class ValidateCodeProperties {
 
     /**

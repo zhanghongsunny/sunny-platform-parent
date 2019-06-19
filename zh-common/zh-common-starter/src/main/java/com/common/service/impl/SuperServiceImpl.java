@@ -27,7 +27,6 @@ import java.util.Objects;
  * @创建时间: 18:14
  **/
 public class SuperServiceImpl<M extends BaseMapper<T>, T> extends ServiceImpl<M, T> implements ISuperService<T> {
-
     /**
      * 幂等性新增记录
      * 例子如下：
@@ -142,5 +141,4 @@ public class SuperServiceImpl<M extends BaseMapper<T>, T> extends ServiceImpl<M,
     public boolean saveOrUpdateIdempotency(T entity, DistributedLock lock, String lockKey, Wrapper<T> countWrapper) {
         return this.saveOrUpdateIdempotency(entity, lock, lockKey, countWrapper, null);
     }
-
 }

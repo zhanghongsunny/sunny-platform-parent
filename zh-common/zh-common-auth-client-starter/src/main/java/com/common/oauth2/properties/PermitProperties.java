@@ -1,6 +1,8 @@
 package com.common.oauth2.properties;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +16,8 @@ import java.util.List;
  * @创建日期: 2019-06-13
  * @创建时间: 10:00
  **/
-@Data
+@Setter
+@Getter
 public class PermitProperties {
 
     /**

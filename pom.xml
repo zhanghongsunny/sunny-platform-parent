@@ -58,6 +58,12 @@
         <module>zh-gateway</module>
         <!-- 业务 -->
         <module>zh-business</module>
+        <!-- 前端 -->
+        <module>zh-web</module>
+        <!-- 事务 -->
+        <module>zh-transaction</module>
+        <!-- 监控 -->
+        <module>zh-monitor</module>
     </modules>
 
     <dependencies>

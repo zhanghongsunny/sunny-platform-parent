@@ -19,7 +19,6 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 public class UserServiceFallbackFactory implements FallbackFactory<UserService> {
-
     @Override
     public UserService create(Throwable throwable) {
         return new UserService() {
@@ -48,5 +47,4 @@ public class UserServiceFallbackFactory implements FallbackFactory<UserService> 
             }
         };
     }
-
 }

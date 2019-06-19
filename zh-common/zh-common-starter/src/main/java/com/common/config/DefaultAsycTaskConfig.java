@@ -1,6 +1,8 @@
 package com.common.config;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -19,8 +21,8 @@ import java.util.concurrent.ThreadPoolExecutor;
  * @创建日期: 2019-06-12
  * @创建时间: 17:38
  **/
-@Data
-@ToString
+@Setter
+@Getter
 @EnableAsync(proxyTargetClass = true)
 public class DefaultAsycTaskConfig {
 

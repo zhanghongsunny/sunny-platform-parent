@@ -1,7 +1,10 @@
 package com.common.feign;
 
+import com.common.constant.ServiceNameConstants;
 import com.common.entity.LoginAppUser;
 import com.common.entity.SysUser;
+import com.common.feign.fallback.UserServiceFallbackFactory;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,8 +18,8 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @创建日期: 2019-06-12
  * @创建时间: 17:45
  **/
+@FeignClient(name = ServiceNameConstants.USER_SERVICE, fallbackFactory = UserServiceFallbackFactory.class, decode404 = true)
 public interface UserService {
-
     /**
      * feign rpc访问远程/users/{username}接口
      * 查询用户实体对象SysUser
@@ -51,6 +54,5 @@ public interface UserService {
      */
     @GetMapping(value = "/users-anon/openId", params = "openId")
     LoginAppUser findByOpenId(@RequestParam("openId") String openId);
-
 
 }

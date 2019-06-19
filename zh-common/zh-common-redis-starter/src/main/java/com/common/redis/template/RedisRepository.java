@@ -15,11 +15,8 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
+
 
 /**
  * @描述: redis 基本操作 可扩展,基本够用了
@@ -32,7 +29,6 @@ import java.util.Set;
  **/
 @Slf4j
 public class RedisRepository {
-
     /**
      * 默认编码
      */
@@ -510,6 +506,4 @@ public class RedisRepository {
     public void insert(String key, long index, Object value) {
         opsForList().set(key, index, value);
     }
-
-
 }

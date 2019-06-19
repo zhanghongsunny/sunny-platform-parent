@@ -21,10 +21,8 @@ import javax.sql.DataSource;
  **/
 @Configuration
 public class ClientDetailsConfig {
-
     @Resource
     private DataSource dataSource;
-
     @Resource
     private RedisTemplate<String, Object> redisTemplate;
 
@@ -44,5 +42,4 @@ public class ClientDetailsConfig {
         redisAuthorizationCodeServices.setRedisTemplate(redisTemplate);
         return redisAuthorizationCodeServices;
     }
-
 }

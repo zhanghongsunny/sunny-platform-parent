@@ -1,6 +1,7 @@
 package com.security.oauth.service.impl;
 
 import cn.hutool.core.util.RandomUtil;
+
 import com.common.constant.SecurityConstants;
 import com.common.entity.Result;
 import com.common.entity.SysUser;
@@ -30,7 +31,6 @@ import javax.servlet.http.HttpServletRequest;
 @Slf4j
 @Service
 public class ValidateCodeServiceImpl implements IValidateCodeService {
-
     @Autowired
     private RedisRepository redisRepository;
 
@@ -131,6 +131,4 @@ public class ValidateCodeServiceImpl implements IValidateCodeService {
     private String buildKey(String deviceId) {
         return SecurityConstants.DEFAULT_CODE_KEY + ":" + deviceId;
     }
-
-
 }

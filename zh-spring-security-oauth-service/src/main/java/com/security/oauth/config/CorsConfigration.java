@@ -47,5 +47,4 @@ public class CorsConfigration {
         registration.setOrder(Integer.MIN_VALUE);
         return registration;
     }
-
 }

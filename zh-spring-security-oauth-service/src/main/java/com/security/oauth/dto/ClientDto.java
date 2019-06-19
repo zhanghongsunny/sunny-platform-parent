@@ -1,7 +1,8 @@
 package com.security.oauth.dto;
 
 import com.security.oauth.model.Client;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 import java.util.Set;
@@ -15,7 +16,8 @@ import java.util.Set;
  * @创建日期: 2019-06-13
  * @创建时间: 11:39
  **/
-@Data
+@Setter
+@Getter
 public class ClientDto extends Client {
 
     private static final long serialVersionUID = 1475637288060027265L;

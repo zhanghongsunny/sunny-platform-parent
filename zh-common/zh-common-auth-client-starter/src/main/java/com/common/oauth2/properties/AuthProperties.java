@@ -1,6 +1,8 @@
 package com.common.oauth2.properties;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @描述: 认证配置
@@ -11,7 +13,8 @@ import lombok.Data;
  * @创建日期: 2019-06-13
  * @创建时间: 09:59
  **/
-@Data
+@Setter
+@Getter
 public class AuthProperties {
 
     /**

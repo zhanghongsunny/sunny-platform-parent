@@ -14,7 +14,6 @@ import com.common.lock.DistributedLock;
  * @创建时间: 18:13
  **/
 public interface ISuperService<T> extends IService<T> {
-
     /**
      * 幂等性新增记录
      *
@@ -60,6 +59,4 @@ public interface ISuperService<T> extends IService<T> {
      * @return
      */
     boolean saveOrUpdateIdempotency(T entity, DistributedLock lock, String lockKey, Wrapper<T> countWrapper);
-
-
 }

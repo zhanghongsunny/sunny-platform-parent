@@ -2,6 +2,7 @@ package com.security.oauth.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+
 import com.common.constant.CommonConstant;
 import com.common.constant.SecurityConstants;
 import com.common.entity.PageResult;
@@ -33,7 +34,6 @@ import java.util.Map;
 @Slf4j
 @Service
 public class ClientServiceImpl extends SuperServiceImpl<ClientMapper, Client> implements IClientService {
-
     private final static String LOCK_KEY_CLIENTID = CommonConstant.LOCK_KEY_PREFIX+"clientId:";
 
     @Autowired
@@ -81,6 +81,4 @@ public class ClientServiceImpl extends SuperServiceImpl<ClientMapper, Client> im
     private String clientRedisKey(String clientId) {
         return SecurityConstants.CACHE_CLIENT_KEY + ":" + clientId;
     }
-
-
 }

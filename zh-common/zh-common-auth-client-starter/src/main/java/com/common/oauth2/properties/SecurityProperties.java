@@ -15,7 +15,8 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
  * @创建日期: 2019-06-13
  * @创建时间: 09:58
  **/
-@Data
+@Setter
+@Getter
 @ConfigurationProperties(prefix = "zh.security")
 @RefreshScope
 public class SecurityProperties {

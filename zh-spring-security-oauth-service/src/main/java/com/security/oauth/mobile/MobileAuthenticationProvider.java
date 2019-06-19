@@ -1,6 +1,5 @@
 package com.security.oauth.mobile;
 
-
 import com.security.oauth.service.ZhUserDetailsService;
 import lombok.Setter;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -21,7 +20,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  **/
 @Setter
 public class MobileAuthenticationProvider implements AuthenticationProvider {
-
     private ZhUserDetailsService userDetailsService;
     private PasswordEncoder passwordEncoder;
 
@@ -34,10 +32,16 @@ public class MobileAuthenticationProvider implements AuthenticationProvider {
         if (user == null) {
             throw new InternalAuthenticationServiceException("手机号或密码错误");
         }
+        System.out.println("密码参数" + user.getPassword());
+        System.out.println("数据库密码" + password);
         if (!passwordEncoder.matches(password, user.getPassword())) {
             throw new BadCredentialsException("手机号或密码错误");
         }
-        MobileAuthenticationToken authenticationResult = new MobileAuthenticationToken(user, password, user.getAuthorities());
+        if (!user.getPassword().equals(password)) {
+            throw new BadCredentialsException("手机号或密码错误");
+        }
+        MobileAuthenticationToken authenticationResult = new MobileAuthenticationToken(user, password,
+                user.getAuthorities());
         authenticationResult.setDetails(authenticationToken.getDetails());
         return authenticationResult;
     }
@@ -46,6 +50,4 @@ public class MobileAuthenticationProvider implements AuthenticationProvider {
     public boolean supports(Class<?> authentication) {
         return MobileAuthenticationToken.class.isAssignableFrom(authentication);
     }
-
-
 }

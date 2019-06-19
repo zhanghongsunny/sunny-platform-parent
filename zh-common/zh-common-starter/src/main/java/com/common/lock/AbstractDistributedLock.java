@@ -35,6 +35,4 @@ public abstract class AbstractDistributedLock implements DistributedLock {
     public boolean lock(String key, long expire, int retryTimes) {
         return lock(key, expire, retryTimes, SLEEP_MILLIS);
     }
-
-
 }
