@@ -5,7 +5,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @描述:
+ * @描述: MybatisPlusConfig
  * @版权: Copyright (c) 2019
  * @公司:
  * @author: zhanghong

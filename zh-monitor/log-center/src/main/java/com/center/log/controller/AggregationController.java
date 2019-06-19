@@ -1,6 +1,6 @@
 package com.center.log.controller;
 
-import com.serach.client.service.IQueryService;
+import com.business.serach.client.service.IQueryService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

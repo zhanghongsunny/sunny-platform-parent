@@ -64,6 +64,7 @@ public class SwaggerConfiguration {
     private ApiKey apiKey() {
         return new ApiKey("BearerToken", "Authorization", "header");
     }
+
     private ApiKey apiKey1() {
         return new ApiKey("BearerToken1", "Authorization-x", "header");
     }

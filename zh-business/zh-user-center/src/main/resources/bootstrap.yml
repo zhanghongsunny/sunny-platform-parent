@@ -1,6 +1,15 @@
 server:
   port: 7000
 
+  undertow:
+    accesslog:
+      # 指定工作者线程的 I/0 线程数，默认为 2 或者 CPU 的个数
+      io-threads: 4
+      # 指定工作者线程个数，默认为 I/O 线程个数的 8 倍
+      worker-threads: 20
+      # 设置 HTTP POST 内容的最大长度，默认不做限制
+      max-http-post-size: 0
+
 zh:
   nacos:
     server-addr: 127.0.0.1:8848

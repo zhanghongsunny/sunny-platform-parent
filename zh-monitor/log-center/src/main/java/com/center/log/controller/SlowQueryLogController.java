@@ -2,8 +2,8 @@ package com.center.log.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.common.entity.PageResult;
-import com.serach.client.service.IQueryService;
-import com.serach.model.SearchDto;
+import com.business.serach.client.service.IQueryService;
+import com.business.serach.model.SearchDto;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;

@@ -1,14 +1,15 @@
 package com.business;
 
 import com.common.annotation.EnableLoginArgResolver;
-import com.serach.annotation.EnableSearchClient;
+import com.business.serach.annotation.EnableSearchClient;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
- * @描述:
+ * @描述: 用户中心
  * @版权: Copyright (c) 2019
  * @公司:
  * @author: zhanghong
@@ -20,6 +21,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableDiscoveryClient
 @EnableSearchClient
 @EnableTransactionManagement
+@ComponentScan(basePackages = {"com.common.lock", "com.business.serach.client.feign"})
 @SpringBootApplication
 public class UserCenterApp {
 
